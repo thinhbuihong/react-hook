@@ -1,0 +1,15 @@
+.color-box {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  transition: all 0.35 ease-in-out 0s;
+  -webkit-transition: all 0.35 ease-in-out 0s;
+  -moz-transition: all 0.35 ease-in-out 0s;
+  -ms-transition: all 0.35 ease-in-out 0s;
+  -o-transition: all 0.35 ease-in-out 0s;
+}
