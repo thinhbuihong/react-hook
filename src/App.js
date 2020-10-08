@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import queryString from 'query-string';
 import './App.scss';
+import BetterClock from './components/BetterClock'
 import ColorBox from './components/ColorBox';
 import Pagination from './components/Pagination';
 import PostList from './components/PostList';
@@ -86,6 +87,7 @@ function App() {
       <Pagination pagination={pagination}
         onPageChange={handlePageChange}></Pagination> */}
       <Clock></Clock>
+      <BetterClock></BetterClock>
     </div>
   );
 }

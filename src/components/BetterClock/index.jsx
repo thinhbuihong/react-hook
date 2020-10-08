@@ -7,7 +7,7 @@ function Clock(props) {
 
   return (
     <div>
-      <p>{timeString}</p>
+      <h1>{timeString}</h1>
     </div>
   );
 }
