@@ -6,6 +6,8 @@ import Pagination from './components/Pagination';
 import PostList from './components/PostList';
 import TodoFrom from './components/TodoForm';
 import TodoList from './components/TodoList';
+import PostFilterForm from './components/PostFiltersForm/PostFilterForm';
+import Clock from './components/Clock';
 
 function App() {
   const [todoList, setTodoList] = useState([
@@ -20,6 +22,7 @@ function App() {
   const [filters, setFilters] = useState({
     _limit: 10,
     _page: 1,
+    title_like: '',
   })
 
   const [postList, setPostList] = useState([]);
@@ -45,7 +48,7 @@ function App() {
     console.log('new page', newPage)
     setFilters({
       ...filters,
-      _page: newPage
+      _page: newPage,
     })
   }
 
@@ -62,6 +65,13 @@ function App() {
     setTodoList([...todoList, todo]);
     // console.log([...todoList, todo])
   }
+  const handleFiltersChange = (newFilters) => {
+    console.log("debounce")
+    setFilters({
+      ...filters, _page: 1,
+      title_like: newFilters.searchTerm,
+    })
+  }
 
   return (
     <div className="app">
@@ -71,9 +81,11 @@ function App() {
       <TodoFrom onSubmit={handleSubmit}></TodoFrom>
       <TodoList todos={todoList}
         onTodoClick={handleTodoClick}></TodoList> */}
+      {/* <PostFilterForm onSubmit={handleFiltersChange}></PostFilterForm>
       <PostList posts={postList}></PostList>
       <Pagination pagination={pagination}
-        onPageChange={handlePageChange}></Pagination>
+        onPageChange={handlePageChange}></Pagination> */}
+      <Clock></Clock>
     </div>
   );
 }
